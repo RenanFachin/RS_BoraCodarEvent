@@ -17,7 +17,7 @@ module.exports = {
       fontFamily: {
         serif: 'Crimson Pro, sans-serif',
         sans: 'Lato, sans-serif'
-      }
+      },
     },
   },
   plugins: [],
