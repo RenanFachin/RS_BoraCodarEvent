@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #0F0D13;
+}
+
+h1,
+p,
+span {
+    font-family: 'Roboto', sans-serif;
+    color: #E1E1E6;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    opacity: 0.65;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+}
+
+span {
+    opacity: 0.65;
+    font-size: 14px;
+}
+
+@media(max-width: 720px){
+    h1 {
+        font-size: 24px;
+    }
+    
+    p {
+        font-size: 12px;
+    }
+    
+    span {
+        font-size: 12px;
+    }
+}

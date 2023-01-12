@@ -1,0 +1,59 @@
+.controls {
+    margin: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#player-2 .controls,
+#player-3 .controls {
+    justify-content: space-around;
+}
+
+#player-3 .controls {
+    margin-top: 28px;
+    margin-bottom: 0px;
+}
+
+.track-time {
+    display: flex;
+    flex-direction: column;
+}
+
+.track {
+    /* Relative para poder colocar a track after em cima da before*/
+    position: relative;
+}
+
+.track::before {
+    content: '';
+    height: 6px;
+    width: 100%;
+    display: block;
+    background-color: #D9D9D9;
+    opacity: 0.3;
+    border-radius: 10px;
+
+    /* Absolute para poder colocar a track after em cima da before*/
+    position: absolute;
+}
+
+.track::after {
+    content: '';
+    height: 6px;
+    width: 95%;
+    display: block;
+    background-color: #D9D9D9;
+    opacity: 1;
+    border-radius: 10px;
+
+    /* Absolute para poder colocar a track after em cima da before*/
+    position: absolute;
+}
+
+.time {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
