@@ -7,14 +7,15 @@ Elaboração de diversos projetos durante um intensivo de code.
 <br>
 <br>
 
+<div style="margin-top: 50px; display: flex; justify-content:center; gap: 10px">
+  <img alt="Player de música" src="./desafio01_playermusica/src/assets/github_capa.png" width="84%">
+</div>
 
-<div style="display: flex; justify-content:center; gap: 20px">
-  <img alt="Player de música" src="./desafio01_playermusica/src/assets/github_capa.png" width="39%">
-  <img alt="Card de produto" src="./desafio02_productcard/src/assets/github_capa.png" width="41%">
+<div style="margin-top: 50px; display: flex; justify-content:center; gap: 10px">
+  <img alt="Card de produto" src="./desafio02_productcard/src/assets/github_capa.png" width="84%">
 </div>
 
 
 <div style="margin-top: 50px; display: flex; justify-content:center; gap: 10px">
   <img alt="Chat" src="https://i.imgur.com/8nHjX5q.png" width="84%">
-  <!-- <img alt="Card de produto" src="./desafio02_productcard/src/assets/github_capa.png" width="44%"> -->
 </div>
