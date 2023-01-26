@@ -76,11 +76,11 @@ export function App() {
 
       <footer className="w-full flex items-center my-6">
         <input
-          className="bg-gray-700 flex-1 rounded-l-full py-5 placeholder:text-xs placeholder:text-gray-100 pl-6"
+          className="bg-gray-700 flex-1 rounded-l-full py-5 placeholder:text-xs placeholder:text-gray-100 pl-6 focus:outline-none focus:ring-2"
           placeholder="Digite sua mensagem"
         />
 
-        <button className="bg-gray-700 rounded-r-full py-5 px-6 ">
+        <button className="bg-gray-700 rounded-r-full py-5 px-6">
           <AiOutlineSend size={24} className="text-gray-100" />
 
         </button>
