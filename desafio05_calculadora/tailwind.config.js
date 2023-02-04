@@ -13,7 +13,8 @@ module.exports = {
           EqualButton: "#7F45E2"
         },
         gray: {
-          100: "#EBEBEB"
+          100: "#EBEBEB",
+          200: "#6B6B6B"
         }
       },
       borderRadius: {
