@@ -1,93 +1,95 @@
-import { RiNumber9, RiNumber8, RiNumber7, RiNumber6, RiNumber5, RiNumber4, RiNumber3, RiNumber2, RiNumber1, RiNumber0 } from 'react-icons/ri'
-import { X, Divide, PlusMinus, Minus, Plus, Equals, Percent } from 'phosphor-react'
 import { Button } from './Button'
+import { useContext } from 'react'
+import { CalculatorContext } from '@/contexts/calculatorContext'
+import { OperationButton } from './OperationButton'
 
 
 export function CalcutorKeyboard() {
-    return(
-        <div className="w-full min-h-[368px] grid grid-cols-4">
-          <Button className="text-[#975DFA]">
-            CE
-          </Button>
 
-          <Button>
-            C
-          </Button>
+  const { setDigit, selectOperation, operation, clearDisplay, handleDelete, handlePercent, handleShowResult } = useContext(CalculatorContext)
 
-          <Button>
-            <Percent />
-          </Button>
+  return (
+    <div className="w-full min-h-[368px] grid grid-cols-4">
+      <OperationButton
+        className="text-[#975DFA]"
+        operation={'CE'}
+        selectOperation={clearDisplay}
+        selectedOperation={operation}
+      />
 
-          <Button buttonColor="violet">
-            <Divide />
-          </Button>
+      <OperationButton
+        operation={'C'}
+        selectOperation={handleDelete}
+        selectedOperation={operation}
+      />
 
-          <Button>
-            <RiNumber7 />
-          </Button>
+      <OperationButton
+        operation={'%'}
+        selectOperation={handlePercent}
+        selectedOperation={operation}
+      />
 
-          <Button>
-            <RiNumber8 />
-          </Button>
+      <OperationButton
+        operation={'/'}
+        selectOperation={selectOperation}
+        selectedOperation={operation}
+      />
 
-          <Button>
-            <RiNumber9 />
-          </Button>
+      <Button digit={"7"} enterDigit={setDigit} />
 
-          <Button buttonColor="violet">
-            <X />
-          </Button>
+      <Button digit={"8"} enterDigit={setDigit} />
 
-          <Button>
-            <RiNumber4 />
-          </Button>
+      <Button digit={"9"} enterDigit={setDigit} />
 
-          <Button>
-            <RiNumber5 />
-          </Button>
+      <OperationButton
+        operation={'*'}
+        selectOperation={selectOperation}
+        selectedOperation={operation}
+      />
 
-          <Button>
-            <RiNumber6 />
-          </Button>
+      <Button digit={"4"} enterDigit={setDigit} />
 
-          <Button buttonColor="violet">
-            <Minus />
-          </Button>
+      <Button digit={"5"} enterDigit={setDigit} />
 
-          <Button>
-            <RiNumber1 />
-          </Button>
+      <Button digit={"6"} enterDigit={setDigit} />
 
-          <Button>
-            <RiNumber2 />
-          </Button>
+      <OperationButton
+        operation={'-'}
+        selectOperation={selectOperation}
+        selectedOperation={operation}
+      />
 
-          <Button>
-            <RiNumber3 />
-          </Button>
+      <Button digit={"1"} enterDigit={setDigit} />
 
-          <Button buttonColor="violet">
-            <Plus />
-          </Button>
+      <Button digit={"2"} enterDigit={setDigit} />
 
+      <Button digit={"3"} enterDigit={setDigit} />
 
-          <Button>
-            <PlusMinus />
-          </Button>
-
-          <Button>
-            <RiNumber0 />
-          </Button>
-
-          <Button>
-            ,
-          </Button>
-
-          <Button className="bg-background-EqualButton">
-            <Equals />
-          </Button>
+      <OperationButton
+        operation={'+'}
+        selectOperation={selectOperation}
+        selectedOperation={operation}
+      />
 
 
-        </div>
-    )
+      <OperationButton
+        operation={'±'}
+        selectOperation={selectOperation}
+        selectedOperation={operation}
+      />
+
+      <Button digit={"0"} enterDigit={setDigit} />
+
+      <Button digit={","} enterDigit={setDigit} />
+
+      <OperationButton
+        operation={'='}
+        selectOperation={selectOperation}
+        selectedOperation={operation}
+        onClick={handleShowResult}
+      />
+
+
+    </div>
+  )
 }
