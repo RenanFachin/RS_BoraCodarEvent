@@ -5,6 +5,9 @@ module.exports = {
   content: [
     "./src/**/*.tsx"
   ],
+  darkMode:
+  'class'
+,
   theme: {
     screens: {
       'sm': '380px',
@@ -22,10 +25,17 @@ module.exports = {
       },
       colors: {
         background: {
-          page: "#807ECE",
+          page: "#2D2A37",
           calculator: "#2D2A37",
           buttons: "#462878",
           EqualButton: "#7F45E2"
+        },
+        lightMode: {
+          background: "#F1F2F3",
+          text: "#000000",
+          buttonHighEmpahsis: "#4B5EFC",
+          buttonMediumEmpahsis: "#D2D3DA",
+          buttonLowEmpahsis: "#FFFFFF",
         },
         gray: {
           100: "#EBEBEB",

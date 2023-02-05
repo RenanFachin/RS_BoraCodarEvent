@@ -1,17 +1,16 @@
 import { Button } from './Button'
-import { useContext } from 'react'
-import { CalculatorContext } from '@/contexts/calculatorContext'
 import { OperationButton } from './OperationButton'
+import { useCalculator } from '@/hooks/useCalculator'
 
 
 export function CalcutorKeyboard() {
 
-  const { setDigit, selectOperation, operation, clearDisplay, handleDelete, handlePercent, handleShowResult } = useContext(CalculatorContext)
+  const { setDigit, selectOperation, operation, clearDisplay, handleDelete, handlePercent, handleShowResult } =  useCalculator()
 
   return (
     <div className="w-full min-h-[368px] grid grid-cols-4 justify-items-center">
       <OperationButton
-        className="text-[#975DFA]"
+        className="dark:text-[#975DFA] text-lightMode-text"
         operation={'CE'}
         selectOperation={clearDisplay}
         selectedOperation={operation}
