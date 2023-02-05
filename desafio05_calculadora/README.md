@@ -1,7 +1,11 @@
 <p align="center">
-    <img alt="Projeto" src="./public/DarkTheme.JPG" width="40%">
-    <img alt="Projeto" src="./public/ligthTheme.JPG" width="40%">
+    <img alt="Projeto" src="./public/DarkTheme.JPG" width="100%">
 </p>
+
+<p align="center">
+    <img alt="Projeto" src="./public/ligthTheme.JPG" width="100%">
+</p>
+
 
 # BoraCodar#05 - Calculadora
 A aplicação proposta pelo quinto desafio do #boracodar é uma calculadora! <br>
