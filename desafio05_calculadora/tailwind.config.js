@@ -6,6 +6,16 @@ module.exports = {
     "./src/**/*.tsx"
   ],
   theme: {
+    screens: {
+      'sm': '380px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '450px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+    },
     extend: {
       fontFamily: {
         Rubik: ['var(--font-rubik)', ...fontFamily.sans],

@@ -9,7 +9,7 @@ export function CalcutorKeyboard() {
   const { setDigit, selectOperation, operation, clearDisplay, handleDelete, handlePercent, handleShowResult } = useContext(CalculatorContext)
 
   return (
-    <div className="w-full min-h-[368px] grid grid-cols-4">
+    <div className="w-full min-h-[368px] grid grid-cols-4 justify-items-center">
       <OperationButton
         className="text-[#975DFA]"
         operation={'CE'}
