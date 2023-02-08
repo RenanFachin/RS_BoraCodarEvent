@@ -13,6 +13,8 @@ O desafio inicial era apenas a construção do layout de um boardinPass de forma
 
 Desta forma propus o uso de `ReactJS`, `Typescript`, `Tailwindcss`.
 
+[Deploy](https://rs-bora-codar-event-boarding-pass.vercel.app/)
+
 ## Instalação
 Faça o clone do repositório
 
