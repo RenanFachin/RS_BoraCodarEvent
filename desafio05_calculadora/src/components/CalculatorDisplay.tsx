@@ -1,9 +1,10 @@
 import { useCalculator } from '@/hooks/useCalculator'
 import { Equals } from 'phosphor-react'
+import { useState } from 'react'
 
 export function CalculatorDisplay() {
-    
     const {currentValue, prevValue, operation} = useCalculator()
+    
     return (
         <div className="w-full min-h-[120px] flex flex-col justify-center px-5 gap-2 max-w-[300px] overflow-auto">
             <span className="text-right text-gray-200 opacity-70 text-lg md:text-xl">

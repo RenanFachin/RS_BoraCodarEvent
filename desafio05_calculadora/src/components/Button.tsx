@@ -1,15 +1,14 @@
 import { clsx } from 'clsx'
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     buttonColor?: 'default' | 'violet'
     className?: string;
-    children?: ReactNode;
     digit: string;
     enterDigit: (digit: string) => void;
 }
 
-export function Button({ digit, enterDigit, buttonColor = 'default', className, children, ...rest }: ButtonProps) {
+export function Button({ digit, enterDigit, buttonColor = 'default', className, ...rest }: ButtonProps) {
     
     return (
         <button className={clsx(
