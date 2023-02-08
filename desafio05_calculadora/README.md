@@ -32,6 +32,3 @@ Rodando o servidor
 ```bash
 npm run dev
 ```
-
-## Deploy
-- [Move.IT](https://rs-bora-codar-event.vercel.app/)
