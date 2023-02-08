@@ -15,20 +15,22 @@ span {
 }
 
 
-.InvertedCornerMiddleCard:not(:first-child):not(:last-child) {
-    --mask: radial-gradient(12px at 12px 12px, #0000 98%, #000) -12px -12px;
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-}
+@media (min-width: 600px) {
+    .InvertedCornerMiddleCard:not(:first-child):not(:last-child) {
+        --mask: radial-gradient(12px at 12px 12px, #0000 98%, #000) -12px -12px;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+    }
 
-.InvertedCornertFirstCard:nth-child(1) {
-    --mask: radial-gradient(12px at 12px 100%, #0000 98%, #000) -12px;
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-}
+    .InvertedCornertFirstCard:nth-child(1) {
+        --mask: radial-gradient(12px at 12px 100%, #0000 98%, #000) -12px;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+    }
 
-.InvertedCornertLastCard:nth-child(3) {
-    --mask: radial-gradient(12px at 12px 0, #0000 98%, #000) -12px;
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
+    .InvertedCornertLastCard:nth-child(3) {
+        --mask: radial-gradient(12px at 12px 0, #0000 98%, #000) -12px;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+    }
 }
