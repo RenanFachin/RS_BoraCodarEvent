@@ -62,7 +62,7 @@ export function App() {
               </span>
 
               <strong>
-                Rodrigo Terron
+                Renan Fachin
               </strong>
             </div>
 
