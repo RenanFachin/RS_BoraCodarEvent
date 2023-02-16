@@ -9,7 +9,7 @@ import HeaderIlustra02 from './assets/ilustra-02.png'
 import { useSearch } from "./hooks/useSearch"
 
 export function App() {
-  const [activeList, setActiveList] = useState(false)
+  const [activeList, setActiveList] = useState(true)
 
   const { cards, loading } = useSearch()
 
@@ -21,19 +21,7 @@ export function App() {
     setActiveList(false)
   }
 
-  if (loading) {
-    return (
-      <Loading />
-    )
-  }
 
-  if (cards.length == 0) {
-    return (
-      <div className="text-center text-3xl text-gray-400 mt-48">
-        Sorry, nothing found
-      </div>
-    )
-  }
 
   return (
     <div className="w-full  h-screen mx-auto">
@@ -104,19 +92,22 @@ export function App() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-y-8 gap-x-9 mb-24">
-          {
-            cards.map(item => (
-              <CarnavalCard
-                city={item.city}
-                description={item.description}
-                displayName={item.displayName}
-                image={item.image}
-                key={item.id}
-              />
-            ))
-          }
-        </div>
+        {
+          loading ? <Loading /> : (<div className="grid grid-cols-3 gap-y-8 gap-x-9 mb-24">
+            {
+              cards.map(item => (
+                <CarnavalCard
+                  city={item.city}
+                  description={item.description}
+                  displayName={item.displayName}
+                  image={item.image}
+                  key={item.id}
+                />
+              ))
+            }
+          </div>)
+        }
+
 
       </main>
     </div>

@@ -41,11 +41,9 @@ export function SearchProvider({ children }: SearchProviderProps) {
 
 
    function handleSearch() {
-      console.log(city, blockName)
-
       const newCards = CarnavalData.filter((card) => {
          setLoading(true)
-         if (card.city === city) {
+         if (card.city === city || card.displayName == blockName) {
             return card
          }
       })
@@ -82,6 +80,12 @@ export function SearchProvider({ children }: SearchProviderProps) {
 
       setAllBlockName(uniqueBlocks)
    }, [])
+
+   useEffect(() => {
+      console.log(city)
+
+
+   }, [city])
 
    return (
       <SearchContext.Provider value={{ cards, blockName, setBlockName, allBlockName, city, setCity, cities, handleSearch, loading }}>
