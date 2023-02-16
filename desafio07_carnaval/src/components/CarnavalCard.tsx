@@ -1,4 +1,4 @@
-import { CiLocationOn } from 'react-icons/ci'
+import { MdOutlineLocationOn } from 'react-icons/md'
 
 
 interface CarnavalCardProps {
@@ -29,9 +29,8 @@ export function CarnavalCard({ city, description, displayName, image }: Carnaval
             </p>
 
             <span className="text-black text-base opacity-75 flex mr-2">
-               <CiLocationOn
-                  className=''
-                  color='#E45858'
+               <MdOutlineLocationOn
+                  className='text-details'
                   size={24}
                />
                {city}

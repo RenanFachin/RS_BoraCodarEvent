@@ -2,10 +2,15 @@ import { useState } from 'react'
 
 import { Menu } from "@headlessui/react"
 
-import { CiLocationOn, CiSearch } from 'react-icons/ci'
+import { MdSearch } from 'react-icons/md'
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri'
+import { useSearch } from '../hooks/useSearch'
+
 
 export function SearchByNameInput() {
+
+   const { blockName, allBlockName, setBlockName } = useSearch()
+
    const [isOpen, setIsOpen] = useState(false)
 
    return (
@@ -14,11 +19,17 @@ export function SearchByNameInput() {
             className='flex w-full'
             onClick={() => { setIsOpen(!isOpen) }}
          >
-            <CiSearch className="text-2xl mr-[18px] text-details" />
+            <MdSearch className="text-2xl mr-[18px] text-details" />
 
             <div >
-               <div className="text-[15px] leading-tight text-[#7C7C8A]">
-                  Pesquisar por nome
+               <div className="text-[15px] font-medium leading-tight text-left">
+                  {
+                     blockName ? (blockName) : ('-')
+                  }
+               </div>
+
+               <div className="text-[15px] leading-tight text-[#7C7C8A] text-left">
+               Pesquisar por nome
                </div>
             </div>
 
@@ -30,10 +41,23 @@ export function SearchByNameInput() {
             )}
          </Menu.Button>
 
-         <Menu.Items>
-            <Menu.Item>
-
-            </Menu.Item>
+         <Menu.Items
+            className='px-6 py-8 text-[15px] space-y-6 shadow-md bg-white absolute z-10 list-none rounded-b-lg'
+         >
+            {
+               allBlockName.map((block, index) => {
+                  return (
+                     <Menu.Item
+                        as='li'
+                        key={index}
+                        className='cursor-pointer hover:text-violet-700 transition'
+                        onClick={() => setBlockName(block.toString())}
+                     >
+                        {block}
+                     </Menu.Item>
+                  )
+               })
+            }
          </Menu.Items>
       </Menu>
    )

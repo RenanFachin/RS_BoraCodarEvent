@@ -1,15 +1,17 @@
 import { useState } from "react"
 
 import { CarnavalCard } from "./components/CarnavalCard"
-import { CarnavalData } from '../src/utils/CarnavalData'
-
+import { Loading } from "./components/Loading"
 import { Search } from "./components/Search"
 
 import HeaderIlustra01 from './assets/ilustra-01.png'
 import HeaderIlustra02 from './assets/ilustra-02.png'
+import { useSearch } from "./hooks/useSearch"
 
 export function App() {
   const [activeList, setActiveList] = useState(false)
+
+  const { cards, loading } = useSearch()
 
   function handleFilterToList() {
     setActiveList(true)
@@ -17,6 +19,20 @@ export function App() {
 
   function handleFilterToMap() {
     setActiveList(false)
+  }
+
+  if (loading) {
+    return (
+      <Loading />
+    )
+  }
+
+  if (cards.length == 0) {
+    return (
+      <div className="text-center text-3xl text-gray-400 mt-48">
+        Sorry, nothing found
+      </div>
+    )
   }
 
   return (
@@ -90,7 +106,7 @@ export function App() {
 
         <div className="grid grid-cols-3 gap-y-8 gap-x-9 mb-24">
           {
-            CarnavalData.map(item => (
+            cards.map(item => (
               <CarnavalCard
                 city={item.city}
                 description={item.description}

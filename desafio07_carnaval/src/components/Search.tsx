@@ -1,7 +1,10 @@
 import { SearchByNameInput } from "./SearchByNameInput";
 import { SearchByCity } from "./SearchByCity";
+import { useSearch } from "../hooks/useSearch";
 
 export function Search() {
+   const { handleSearch } = useSearch()
+
    return (
       <div className="min-h-[532px] flex flex-col items-center justify-center gap-10">
          <div className="flex flex-col items-center justify-center gap-5">
@@ -28,7 +31,8 @@ export function Search() {
                <SearchByCity />
 
                <button
-                  className="bg-violet-600 font-bold rounded-xl text-white text-sm py-3 px-8"
+                  onClick={() => handleSearch()}
+                  className="bg-violet-600 font-bold rounded-xl text-white text-sm py-3 px-8 cursor-pointer"
                >
                   BUSCAR AGORA
                </button>
