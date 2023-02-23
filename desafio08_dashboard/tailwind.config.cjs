@@ -5,10 +5,14 @@ module.exports = {
     "./index.html"
   ],
   theme: {
+    fontFamily:{
+      sans: ['Inter', 'sans-serif']
+    },
     extend: {
       colors:{
         background: '#292738',
         card: '#363447',
+        circle: '#4A4556',
         text: '#81FBB8',
       },
       backgroundImage: {
@@ -20,6 +24,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         'cards': '296px 351px 1fr'
+      },
+      boxShadow: {
+        'card-shadow': '3px 4px 26px rgba(0, 0, 0, 0.25);'
       }
     },
   },
