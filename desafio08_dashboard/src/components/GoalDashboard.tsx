@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 export function GoalDashboard() {
    const idCSS = 'GoalsDashboard'
-   const percentage = 90;
+   const valueExpected = 70
+   const valueReached = 63
+
+   const percentage = (valueReached/valueExpected)*100
 
    return (
       <motion.div
@@ -26,7 +29,7 @@ export function GoalDashboard() {
             <div className='w-48 h-48 drop-shadow-goals'>
                <GoalsGradientSVG />
                <CircularProgressbarWithChildren
-                  strokeWidth={14}
+                  strokeWidth={13}
                   value={percentage}
                   styles={({
                      trail: {
@@ -45,21 +48,17 @@ export function GoalDashboard() {
                   </div>
                </CircularProgressbarWithChildren>
             </div>
-
-            <strong className='text-text text-2xl'>
-
-            </strong>
          </div>
 
          <div className='text-sm text-white flex items-center justify-center gap-5'>
             <div className="flex items-center gap-1">
                <div className="w-4 h-4 rounded-full bg-circle" />
-               <p>Esperado<span className="ml-2">R$ 70K</span></p>
+               <p>Esperado<span className="ml-2">R$ {valueExpected}K</span></p>
             </div>
 
             <div className="flex items-center gap-1">
                <div className="w-4 h-4 rounded-full bg-goals-gradient" />
-               <p>Alcançado<span className="ml-2">R$ 63K</span></p>
+               <p>Alcançado<span className="ml-2">R$ {valueReached}K</span></p>
             </div>
          </div>
       </motion.div>

@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 
 export function SalesDashboard() {
    const idCSS = 'SalesDashboard'
-   const percentage = 70;
+   const valueExpected = 100
+   const valueReached = 70
+
+   const percentage = (valueReached/valueExpected)*100
+
+
+
 
    return (
       <motion.div
@@ -29,7 +35,7 @@ export function SalesDashboard() {
 
                <SalesGradientSVG />
                <CircularProgressbarWithChildren
-                  strokeWidth={14}
+                  strokeWidth={13}
                   value={percentage}
                   styles={({
                      trail: {
@@ -49,20 +55,17 @@ export function SalesDashboard() {
                </CircularProgressbarWithChildren>
             </div>
 
-            <strong className='text-text text-2xl'>
-
-            </strong>
          </div>
 
          <div className='text-sm text-white flex items-center justify-center gap-5'>
             <div className="flex items-center gap-1">
                <div className="w-4 h-4 rounded-full bg-circle" />
-               <p>Esperado<span className="ml-2">100</span></p>
+               <p>Esperado<span className="ml-2">{valueExpected}</span></p>
             </div>
 
             <div className="flex items-center gap-1">
                <div className="w-4 h-4 rounded-full bg-violet-gradient" />
-               <p>Alcançado<span className="ml-2">70</span></p>
+               <p>Alcançado<span className="ml-2">{valueReached}</span></p>
             </div>
          </div>
       </motion.div>
