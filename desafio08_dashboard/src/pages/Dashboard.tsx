@@ -3,9 +3,22 @@ import { GoalDashboard } from "../components/GoalDashboard"
 import { SalesDashboard } from "../components/SalesDashboard"
 import { BarGraph } from "../components/BarGraph"
 
+import { GraphData } from "../utils/GraphData"
+import { useState } from 'react'
+
 import { VscTriangleUp, VscTriangleDown } from 'react-icons/vsc'
 
 export function Dashboard() {
+  const [salesBar, setSalesBar] = useState(GraphData)
+
+  const dayWithMoreSales = salesBar.reduce(function (prev, current) {
+    return (prev.salesOfTheDay > current.salesOfTheDay) ? prev : current
+  })
+
+  const dayWithLessSales = salesBar.reduce(function (prev, current) {
+    return (prev.salesOfTheDay < current.salesOfTheDay) ? prev : current
+  })
+
 
   return (
     <div className="max-w-[1366px] h-full mx-auto flex flex-col justify-center">
@@ -21,7 +34,7 @@ export function Dashboard() {
             Vendas por dia da semana
           </strong>
 
-          <div className="flex gap-8 text-white">
+          <div className="flex justify-between items-center text-white">
             <div className="flex flex-col items-center gap-8 h-[168px]">
               <div>
                 <div className="flex items-center gap-1 mb-2">
@@ -29,11 +42,11 @@ export function Dashboard() {
                     color="rgba(129, 251, 184, 1)"
                   />
 
-                  <span className="text-sm">Dia com menos vendas</span>
+                  <span className="text-sm">Dia com mais vendas</span>
                 </div>
 
                 <strong className="text-2xl font-medium">
-                  quarta-feira
+                  {dayWithMoreSales.dayOfWeek}
                 </strong>
               </div>
 
@@ -48,14 +61,14 @@ export function Dashboard() {
                 </div>
 
                 <strong className="text-2xl font-medium mt-2">
-                  Domingo
+                  {dayWithLessSales.dayOfWeek}
                 </strong>
               </div>
             </div>
 
 
             {/* Dashboard */}
-              <BarGraph />
+            <BarGraph />
 
 
 
