@@ -9,16 +9,15 @@ export function GoalDashboard() {
    return (
       <div className="w-full h-full flex flex-col py-8 px-12 items-center justify-between bg-card rounded-2xl shadow-card-shadow">
          <h3 className='text-2xl text-white'>
-            Metas mensal
+            Meta mensal
          </h3>
 
          <div className='flex flex-col items-center gap-4'>
             <div className='w-48 h-48'>
                <GoalsGradientSVG />
                <CircularProgressbarWithChildren
-
-                  strokeWidth={14}
-                  value={90}
+                  strokeWidth={14}                  
+                  value={percentage}
                   styles={({
                      trail: {
                         stroke: '#D9D9D9',
@@ -31,7 +30,7 @@ export function GoalDashboard() {
                   })}
                >
                   <div className='flex flex-col items-center justify-center text-white'>
-                     <strong className='text-4xl'>90%</strong>
+                     <strong className='text-4xl'>{percentage}%</strong>
                      <span>alcançada</span>
                   </div>
                </CircularProgressbarWithChildren>
