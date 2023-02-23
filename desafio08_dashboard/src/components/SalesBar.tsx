@@ -1,3 +1,4 @@
+import { animate } from "framer-motion";
 
 type SalesBarProps = {
    value: number;
@@ -8,7 +9,7 @@ export function SalesBar({ value, title }: SalesBarProps) {
    const barSize = (value / 10) * 100
 
    const progressStyles = {
-      height: `${barSize}%`
+      height: `${barSize}%`,
    }
 
    return (
@@ -19,7 +20,7 @@ export function SalesBar({ value, title }: SalesBarProps) {
                role="progressbar"
                aria-label="Progresso de vendas"
                aria-valuenow={value}
-               className="w-4 rounded-full bg-bars-gradient"
+               className="w-4 rounded-full bg-bars-gradient animate-teste"
                style={progressStyles}
             />
 

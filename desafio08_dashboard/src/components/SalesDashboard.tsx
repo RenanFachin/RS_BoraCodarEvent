@@ -29,7 +29,7 @@ export function SalesDashboard() {
 
                <SalesGradientSVG />
                <CircularProgressbarWithChildren
-
+                  
                   strokeWidth={14}
                   value={percentage}
                   styles={({

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export function Nps() {
    return (
       <motion.div 
-      className="w-full h-full flex flex-col py-8 after:px-20 items-center justify-between bg-card rounded-2xl shadow-card-shadow"
+      className="w-full h-full flex flex-col py-8 px-20 items-center justify-between bg-card rounded-2xl shadow-card-shadow"
       initial={{ scale: 0 }}
       animate={{ rotate: 0, scale: 1 }}
       transition={{
