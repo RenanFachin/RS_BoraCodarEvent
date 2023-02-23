@@ -2,7 +2,7 @@ import ExcellentImage from '../assets/excellent.png'
 
 export function Nps() {
    return (
-      <div className="w-full h-full flex flex-col py-8 px-20 items-center justify-between bg-card rounded-2xl shadow-card-shadow">
+      <div className="w-full h-full flex flex-col py-8 after:px-20 items-center justify-between bg-card rounded-2xl shadow-card-shadow">
          <h3 className='text-2xl leading-relaxed font-semibold text-white'>
             NPS geral
          </h3>
