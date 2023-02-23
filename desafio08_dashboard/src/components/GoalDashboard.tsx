@@ -23,7 +23,7 @@ export function GoalDashboard() {
          </h3>
 
          <div className='flex flex-col items-center gap-4'>
-            <div className='w-48 h-48'>
+            <div className='w-48 h-48 drop-shadow-goals'>
                <GoalsGradientSVG />
                <CircularProgressbarWithChildren
                   strokeWidth={14}

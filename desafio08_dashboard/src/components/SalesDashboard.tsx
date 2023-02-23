@@ -25,11 +25,10 @@ export function SalesDashboard() {
 
          <div className='flex flex-col items-center gap-4'>
 
-            <div className='w-48 h-48'>
+            <div className='w-48 h-48 drop-shadow-sales'>
 
                <SalesGradientSVG />
                <CircularProgressbarWithChildren
-                  
                   strokeWidth={14}
                   value={percentage}
                   styles={({

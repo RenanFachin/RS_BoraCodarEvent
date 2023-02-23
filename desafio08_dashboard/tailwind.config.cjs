@@ -36,6 +36,10 @@ module.exports = {
       },
       animation: {
         teste: 'teste 1s ease-in-out',
+      },
+      dropShadow: {
+        'sales': '0 8px 8px rgba(115,103, 240, 0.30)',
+        'goals': '0 8px 8px rgba(223,151, 128, 0.30)'
       }
     },
   },
