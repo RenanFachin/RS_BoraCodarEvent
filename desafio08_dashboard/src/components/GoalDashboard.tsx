@@ -21,7 +21,7 @@ export function GoalDashboard() {
             damping: 70
          }}
       >
-         <h3 className='text-2xl text-white'>
+         <h3 className='text-2xl text-white font-semibold'>
             Meta mensal
          </h3>
 

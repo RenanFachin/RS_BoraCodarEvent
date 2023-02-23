@@ -25,7 +25,7 @@ export function SalesDashboard() {
             damping: 50
          }}
       >
-         <h3 className='text-2xl text-white'>
+         <h3 className='text-2xl text-white font-semibold'>
             Vendas fechadas
          </h3>
 
