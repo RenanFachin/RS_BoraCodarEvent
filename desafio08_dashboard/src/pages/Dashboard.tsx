@@ -5,6 +5,7 @@ import { BarGraph } from "../components/BarGraph"
 
 import { GraphData } from "../utils/GraphData"
 import { useState } from 'react'
+import { motion } from "framer-motion";
 
 import { VscTriangleUp, VscTriangleDown } from 'react-icons/vsc'
 
@@ -31,7 +32,16 @@ export function Dashboard() {
           <GoalDashboard />
         </div>
 
-        <div className="w-full min-h-[314px] bg-card rounded-2xl mt-14 shadow-card-shadow flex flex-col py-8 px-12 gap-8">
+        <motion.div
+          className="w-full min-h-[314px] bg-card rounded-2xl mt-14 shadow-card-shadow flex flex-col py-8 px-12 gap-8"
+          initial={{ scale: 0 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 90
+          }}
+        >
           <strong className="font-semibold text-2xl leading-relaxed text-white">
             Vendas por dia da semana
           </strong>
@@ -69,13 +79,13 @@ export function Dashboard() {
             </div>
 
 
-     
+
             <BarGraph />
 
 
 
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
