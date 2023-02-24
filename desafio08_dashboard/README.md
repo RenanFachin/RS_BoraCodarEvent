@@ -1,6 +1,6 @@
 <p align="center">
-    <img alt="Projeto" src="./public/CapaGit.jpg" width="80%">
-    <img alt="Projeto" src="./public/CapaGitLight.jpg" width="80%">
+    <img alt="Projeto" src="./public/CapaGit.png" width="80%">
+    <img alt="Projeto" src="./public/CapaGitLight.png" width="80%">
 </p>
 
 # BoraCodar#08 - DashBoard
