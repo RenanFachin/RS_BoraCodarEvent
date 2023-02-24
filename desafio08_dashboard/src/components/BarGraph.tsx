@@ -17,7 +17,7 @@ export function BarGraph() {
             />
          ))}
 
-         <div className="absolute w-full h-1 bg-circle top-1/2 -translate-y-3" />
+         <div className="absolute w-full h-1 dark:bg-circle bg-slate-200 top-1/2 -translate-y-3" />
       </div>
    )
 }

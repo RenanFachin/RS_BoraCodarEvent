@@ -2,6 +2,7 @@ import { CircularProgressbarWithChildren } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css';
 import { GoalsGradientSVG } from './GradientSVG';
 import { motion } from "framer-motion";
+import { useTheme } from '../hooks/useTheme';
 
 export function GoalDashboard() {
    const idCSS = 'GoalsDashboard'
@@ -10,9 +11,11 @@ export function GoalDashboard() {
 
    const percentage = (valueReached/valueExpected)*100
 
+   const {actualTheme} = useTheme()
+   
    return (
       <motion.div
-         className="w-full h-full flex flex-col py-8 px-12 items-center justify-between bg-card rounded-2xl shadow-card-shadow"
+         className="w-full h-full flex flex-col py-8 px-12 items-center justify-between dark:bg-card bg-gray-100 rounded-2xl shadow-card-shadow"
          initial={{ scale: 0 }}
          animate={{ rotate: 0, scale: 1 }}
          transition={{
@@ -21,36 +24,63 @@ export function GoalDashboard() {
             damping: 70
          }}
       >
-         <h3 className='text-2xl text-white font-semibold'>
+         <h3 className='text-2xl dark:text-white font-semibold'>
             Meta mensal
          </h3>
 
          <div className='flex flex-col items-center gap-4'>
             <div className='w-48 h-48 drop-shadow-goals'>
                <GoalsGradientSVG />
-               <CircularProgressbarWithChildren
-                  strokeWidth={13}
-                  value={percentage}
-                  styles={({
-                     trail: {
-                        stroke: '#D9D9D9',
-                        strokeLinecap: 'butt',
-                        opacity: 0.1,
-                     },
-                     path: {
-                        stroke: `url(#${idCSS})`,
-                     }
-                  })}
-               >
-                  <div className='flex flex-col items-center justify-center text-white'>
-                     <strong className='text-4xl'>{percentage}%</strong>
-                     <span>alcançada</span>
-                  </div>
-               </CircularProgressbarWithChildren>
+               {
+                  !actualTheme ?
+                     (
+                        <CircularProgressbarWithChildren
+                           strokeWidth={13}
+                           value={percentage}
+                           styles={({
+                              trail: {
+                                 stroke: `#D9D9D9`,
+                                 strokeLinecap: 'butt',
+                                 opacity: 0.1,
+                              },
+                              path: {
+                                 stroke: `url(#${idCSS})`,
+                              }
+                           })}
+                        >
+                           <div className='flex flex-col items-center justify-center dark:text-white'>
+                              <strong className='text-4xl'>{percentage}%</strong>
+                              <span>alcançada</span>
+                           </div>
+                        </CircularProgressbarWithChildren>
+                     )
+                     :
+                     (
+                        <CircularProgressbarWithChildren
+                           strokeWidth={13}
+                           value={percentage}
+                           styles={({
+                              trail: {
+                                 stroke: `#2c0b16`,
+                                 strokeLinecap: 'butt',
+                                 opacity: 0.1,
+                              },
+                              path: {
+                                 stroke: `url(#${idCSS})`,
+                              }
+                           })}
+                        >
+                           <div className='flex flex-col items-center justify-center dark:text-white'>
+                              <strong className='text-4xl'>{percentage}%</strong>
+                              <span>alcançada</span>
+                           </div>
+                        </CircularProgressbarWithChildren>
+                     )
+               }
             </div>
          </div>
 
-         <div className='text-sm text-white flex items-center justify-center gap-5'>
+         <div className='text-sm dark:text-white flex items-center justify-center gap-5'>
             <div className="flex items-center gap-1">
                <div className="w-4 h-4 rounded-full bg-circle" />
                <p>Esperado<span className="ml-2">R$ {valueExpected}K</span></p>

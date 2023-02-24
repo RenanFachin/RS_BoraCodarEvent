@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export function Nps() {
    return (
       <motion.div 
-      className="w-full h-full flex flex-col py-8 px-20 items-center justify-between bg-card rounded-2xl shadow-card-shadow"
+      className="w-full h-full flex flex-col py-8 px-20 items-center justify-between dark:bg-card bg-gray-100 rounded-2xl shadow-card-shadow"
       initial={{ scale: 0 }}
       animate={{ rotate: 0, scale: 1 }}
       transition={{
@@ -13,7 +13,7 @@ export function Nps() {
          damping: 30
       }}
       >
-         <h3 className='text-2xl leading-relaxed font-semibold text-white'>
+         <h3 className='text-2xl leading-relaxed font-semibold dark:text-white'>
             NPS geral
          </h3>
 
@@ -24,12 +24,12 @@ export function Nps() {
                alt="Green smile"
             />
 
-            <strong className='text-text text-2xl leading-relaxed font-semibold'>
+            <strong className='dark:text-text text-green-500 text-2xl leading-relaxed font-semibold'>
                Excelente!
             </strong>
          </div>
 
-         <span className='text-sm text-white leading-relaxed'>
+         <span className='text-sm dark:text-white leading-relaxed'>
             NPS Score: 75
          </span>
       </motion.div>

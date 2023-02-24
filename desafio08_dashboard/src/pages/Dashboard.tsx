@@ -2,6 +2,7 @@ import { Nps } from "../components/Nps"
 import { GoalDashboard } from "../components/GoalDashboard"
 import { SalesDashboard } from "../components/SalesDashboard"
 import { BarGraph } from "../components/BarGraph"
+import { ThemeButton } from "../components/ThemeButton"
 
 import { GraphData } from "../utils/GraphData"
 import { useState } from 'react'
@@ -22,9 +23,10 @@ export function Dashboard() {
 
 
   return (
-    <div className="max-w-[1366px] h-full mx-auto flex flex-col justify-center">
-      <div className="max-w-[1120px] mx-auto">
+    <div className="max-w-[1366px] h-full mx-auto flex flex-col justify-center relative">
+      <ThemeButton />
 
+      <div className="max-w-[1120px] mx-auto">
 
         <div className="min-h-[379px] grid grid-cols-cards gap-8">
           <Nps />
@@ -33,7 +35,7 @@ export function Dashboard() {
         </div>
 
         <motion.div
-          className="w-full min-h-[314px] bg-card rounded-2xl mt-14 shadow-card-shadow flex flex-col py-8 px-12 gap-8"
+          className="w-full min-h-[314px] dark:bg-card bg-gray-100 rounded-2xl mt-14 shadow-card-shadow flex flex-col py-8 px-12 gap-8"
           initial={{ scale: 0 }}
           animate={{ rotate: 0, scale: 1 }}
           transition={{
@@ -42,12 +44,12 @@ export function Dashboard() {
             damping: 90
           }}
         >
-          <strong className="font-semibold text-2xl leading-relaxed text-white">
+          <strong className="font-semibold text-2xl leading-relaxed dark:text-white">
             Vendas por dia da semana
           </strong>
 
-          <div className="flex justify-between items-center text-white">
-            <div className="flex flex-col items-center gap-8 h-[168px]">
+          <div className="flex justify-between items-center dark:text-white">
+            <div className="flex flex-col gap-8 h-[168px]">
               <div>
                 <div className="flex items-center gap-1 mb-2">
                   <VscTriangleUp

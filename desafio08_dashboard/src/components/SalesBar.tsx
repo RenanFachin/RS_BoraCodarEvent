@@ -1,5 +1,3 @@
-import { animate } from "framer-motion";
-
 type SalesBarProps = {
    value: number;
    title: string;
@@ -20,7 +18,7 @@ export function SalesBar({ value, title }: SalesBarProps) {
                role="progressbar"
                aria-label="Progresso de vendas"
                aria-valuenow={value}
-               className="w-4 rounded-full bg-bars-gradient animate-teste"
+               className="w-4 rounded-full dark:bg-bars-gradient bg-violet-gradient animate-teste"
                style={progressStyles}
             />
 
