@@ -1,7 +1,7 @@
 <p align="center">
-    <img alt="Projeto" src="./public/CapaGit.png" width="80%">
+    <img alt="Projeto" src="./public/CapaGit.jpg" width="80%">
+    <img alt="Projeto" src="./public/CapaGitLight.jpg" width="80%">
 </p>
-
 
 # BoraCodar#08 - DashBoard
 A aplicação proposta pelo oitavo desafio do #boracodar é painel de Dashboard de vendas! <br>
