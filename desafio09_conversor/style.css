@@ -1,3 +1,5 @@
+
+
 * {
    margin: 0;
    padding: 0;
@@ -7,9 +9,172 @@
 }
 
 :root {
+   --text-color: #0F172A;
+
    font-size: 62.5%;
+   font-family: 'Inter', sans-serif;
 }
 
 body {
    font-size: 1.6rem;
+   background: #f8fafc;
+
+   height: 100vh;
+   display: grid;
+   place-content: center;
+
+   color: var(--text-color)
 }
+
+main {
+   width: 80rem;
+   height: 69.2rem;
+   padding: 6.4rem 8rem;
+   background: #FFFFFF;
+   box-shadow: 0rem 0.4rem 3.2rem rgba(15, 23, 42, 0.15);
+   border-radius: 1.6rem;
+
+   display: grid;
+   gap: 6.4rem;
+}
+
+section h2 {
+   font-weight: 600;
+   font-size: 2rem;
+   line-height: 2.4rem;
+}
+
+.conversor .wrapper {
+   display: flex;
+   align-items: center;
+   gap: 1.6rem;
+
+   margin-top: 1.6rem;
+}
+
+
+.money-wrapper {
+   background: #ffffff;
+   outline: .1rem solid #94a3b8;
+   border-radius: 0.8rem;
+
+   width: 27rem;
+   padding: 1.6rem;
+   
+   display: flex;
+   align-items: center;
+
+   position: relative;
+}
+
+.money-wrapper:hover,
+.money-wrapper:has(:focus) {
+   /* O outline faz com que a "caixa" não seja movimentada */
+   outline: 0.25rem solid #7C3AED; 
+}
+
+.amount {
+   border: 0;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+
+   color: var(--text-color);
+   width: 50%;
+}
+
+.amount:focus {
+   outline: 0;
+}
+
+/* DROPDOWN */
+.dropdown {
+   --bg-hover: #EDE9FE;
+   width: 13rem;
+
+   position: absolute;
+   top: 0;
+   right: 0;  
+
+   height: 5.6rem;
+   overflow: hidden;
+}
+
+.dropdown:hover {
+   /* Para evitar o bug de sumir ao passar o mouse pelo dropdown menu */
+   height: fit-content;
+
+   overflow: initial;
+}
+
+li:hover,
+.selected:hover {
+   background-color: var(--bg-hover);
+}
+
+.selected {
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+
+   border-radius: 0 .8rem .8rem 0;
+
+   padding: 1.6rem;
+
+   cursor: pointer;
+}
+
+.selected::before{
+   content: "";
+   height: 2.4rem;
+   width: 0.1rem;
+   background-color: #94a3b8;
+   position: absolute;
+   left: 0;
+}
+
+.selected::after{
+   content: "";
+
+   width: 2.4rem;
+   height: 2.4rem;
+   background: url(./assets/chevron-down.svg) no-repeat;
+}
+
+.fi.fis{
+   font-size: 2.4rem;
+   border-radius: 50%;
+}
+
+ul {
+   list-style: none;
+   box-shadow: 0 0.4rem 1.6rem rgba(15, 23, 42, 0.15);
+   border-radius: 0.8rem;
+   background-color: white;
+
+   padding: 0;
+   width: 16rem;
+   max-height: 17rem;
+
+   margin-top: 0.8rem;
+
+   overflow-y: scroll;
+}
+
+li {
+   padding: 1.2rem 1.6rem;
+
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+
+   cursor: pointer;
+}
+
+.cambio .wrapper {
+   width: 59.2rem;
+   height: 35.6rem;
+   margin-top: 2.4rem;
+   
+   border: 1px solid red
+}
+
