@@ -27,8 +27,6 @@ body {
 }
 
 main {
-   width: 80rem;
-   height: 69.2rem;
    padding: 6.4rem 8rem;
    background: #FFFFFF;
    box-shadow: 0rem 0.4rem 3.2rem rgba(15, 23, 42, 0.15);
@@ -158,6 +156,9 @@ ul {
    margin-top: 0.8rem;
 
    overflow-y: scroll;
+
+   position: relative;
+   z-index: 1;
 }
 
 li {
@@ -171,10 +172,65 @@ li {
 }
 
 .cambio .wrapper {
-   width: 59.2rem;
-   height: 35.6rem;
    margin-top: 2.4rem;
-   
-   border: 1px solid red
 }
 
+.tooltip {
+   background-color: white;
+   box-shadow: 0 0.4rem 1.6rem rgba(15, 23, 42, 0.15);
+   border-radius: 0.4rem;
+   padding: 0.8rem;
+}
+
+.chart-controls {
+   display: flex;
+   justify-content: space-between;
+   margin: -2.2rem 0.8rem 0 4rem;
+
+}
+
+.chart-controls button {
+   background-color: transparent;
+   border: 0;
+
+   width: 4rem;
+   height: 2.4rem;
+
+   font-size: 1.2rem;
+   line-height: 1.6rem;
+   text-align: center;
+   
+   cursor: pointer;
+
+}
+
+.chart-controls button:hover,
+.chart-controls button.active {
+   background-color: #7c3aed;
+   color: white;
+   border-radius: 999px;
+   padding: 0.4rem 0.8rem;
+}
+
+
+
+@media (max-width: 48rem) {
+   main {
+      padding: 1.6rem;
+      gap: 3.2rem;
+   }
+
+   section h2 {
+      font-size: 1.6rem;
+   }
+
+   .conversor .wrapper {
+      flex-direction: column;
+      gap: 0.8rem;
+   }
+
+   .money-wrapper {
+      width: 100%;
+      
+   }
+}
