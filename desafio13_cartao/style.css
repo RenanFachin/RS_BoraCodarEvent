@@ -10,14 +10,16 @@
   font-size: 62.5%;
 }
 
-
 body {
-  font-size: 1.6rem;
   background-color: #1F2937;
 }
 
+body, input, button {
+  font-size: 1.6rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 form {
-  border: 1px solid red;
   padding: 2.4rem;
   max-width: 40rem;
   margin: auto;
@@ -57,12 +59,122 @@ form {
 #credit-card .back {
   background: url(./assets/cc-back.png) no-repeat;
   transform: rotateY(-180deg);
+
+  /* Apenas para ajustar */
+  top: -5px; 
 }
 
+#credit-card:active .front,
 #credit-card:hover .front {
   transform: rotateY(180deg);
 }
 
+#credit-card:active .back,
 #credit-card:hover .back {
   transform: rotateY(0deg);
+}
+
+/* Classe utilitária */
+.flex {
+  display: flex;
+}
+
+.inputs {
+  margin-top: 4.8rem;
+
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #E5E7EB;
+
+  gap: 0.4rem;
+  align-items: center;
+}
+
+input {
+  margin-top: 0.4rem;
+  width: 100%;
+  
+  font-family: 'Source Sans Pro';
+
+  padding: 1.2rem;
+  border: 0.1rem solid #374151;
+  
+  background: #111827;
+  border-radius: 0.4rem;
+
+  color: #F3F4F6;
+}
+
+input:focus {
+  outline: 0.15rem solid #9333EA;
+}
+
+input:invalid:focus {
+  border: 0.15rem solid #f64e4e;
+}
+
+input + .warning {
+  display: none;
+}
+
+input:invalid:focus + .warning {
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+  color: #f64e4e;
+
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.col-2 {
+  gap: 2.4rem;
+  align-items: center;
+}
+
+/* Fazendo o primeiro "filho" ter um tamanho maior */
+.col-2 .input-wrapper:nth-child(1){
+  flex-basis: 80%;
+}
+
+.help img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.info-security {
+  margin-top: 4.8rem;
+  justify-content: center;
+
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  color: #E5E7EB;
+}
+
+button {
+  margin-top: 10rem;
+  border: 0;
+  padding: 1.6rem;
+
+  width: 100%;
+  background: #9333EA;
+  box-shadow: 0rem 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
+
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #F9FAFB;
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #A855F7;
 }
