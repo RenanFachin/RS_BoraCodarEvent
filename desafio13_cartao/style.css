@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+  font-size: 62.5%;
+}
+
+
+body {
+  font-size: 1.6rem;
+  background-color: #1F2937;
+}
+
+form {
+  border: 1px solid red;
+  padding: 2.4rem;
+  max-width: 40rem;
+  margin: auto;
+}
+
+#credit-card {
+  width: 32.8rem;
+  height: 21.2rem;
+
+  /* Perspective vai atuar como se fosse o position relative */
+  perspective: 60rem;
+}
+
+#credit-card > div {
+  /* Herdando altura e largura */
+  width: inherit;
+  height: inherit;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  /* Propriedades para fazer o flip */
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  
+  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#credit-card .front {
+  background: url(./assets/cc-front.png) no-repeat;
+  transform: rotateY(0);
+}
+
+#credit-card .back {
+  background: url(./assets/cc-back.png) no-repeat;
+  transform: rotateY(-180deg);
+}
+
+#credit-card:hover .front {
+  transform: rotateY(180deg);
+}
+
+#credit-card:hover .back {
+  transform: rotateY(0deg);
+}
