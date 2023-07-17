@@ -27,7 +27,6 @@
   --border-sm: 8px;
   --border-base: 12px;
   --border-lg: 16px
-
 }
 
 body {
@@ -75,7 +74,7 @@ body {
   color: var(--gray_200);
 }
 
-hr{
+hr {
   border: 1px solid var(--gray_400);
   margin: 1.6rem 0;
 }
@@ -90,7 +89,7 @@ label {
 
 .default {
   margin-top: 1.2rem;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
@@ -123,7 +122,36 @@ i {
   color: var(--gray_300);
 }
 
-.logout i, 
-section .logout p{
+.logout i,
+section .logout p {
   color: var(--red_500);
+}
+
+
+.avatar{
+  color: var(--gray_200);
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .card{
+    width: 32.5rem;
+  }
+
+  .avatar h3 {
+    font-size: 1.6rem;
+  }
+  
+  .avatar span {
+    font-size: 1.2rem;
+  }
+
+  .avatar img{
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+
+  .default div p {
+    font-size: 1.4rem;
+  }
 }
