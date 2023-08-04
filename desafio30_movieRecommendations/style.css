@@ -1,5 +1,7 @@
 :root {
   --color-primary: #FFFFFF;
+  --color-secondar: #8323FF;
+  --color-tertiary: #FF2DAF;
   --color-highlight: #FEEA35;
 
   --color-gray900: #1E1F28;
@@ -96,6 +98,14 @@ header button {
 
   border-radius: 4px;
   background: var(--gradientes-gradiente-normal, linear-gradient(90deg, #8323FF 0%, #FF2DAF 100%));
+
+  cursor: pointer;
+  
+  transition: background 0.3s ease;
+}
+
+header button:hover {
+  background: var(--gradientes-gradiente-hover, linear-gradient(90deg, #9F55FF 0%, #FF46B9 100%));
 }
 
 .movies {
@@ -168,6 +178,7 @@ div.poster>img {
 }
 
 .movie button {
+  cursor: pointer;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -175,4 +186,42 @@ div.poster>img {
   color: var(--color-primary);
   font-size: var(--textSize-button);
   line-height: var(--lineHeight-page);
+
+  transition: background 0.3s ease;
+}
+
+.movie button:hover {
+  background: var(--cores-cinza-mdio, #373745);
+}
+
+
+@media (max-width: 600px){
+  body{
+    height: 100%;
+  }
+  .card {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 32px 48px;
+  }
+  .container {
+    flex-direction: column;
+    max-width: 350px;
+  }
+  header { 
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  header button {
+    flex: 1;
+    gap: 4px;
+  }
+  header img:first-child{
+    display: none;
+  }
+  .movies {
+    flex-direction: column;
+    align-items: center;
+  }
+  
 }
