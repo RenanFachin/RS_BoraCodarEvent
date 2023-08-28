@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#boraCodar - Gerador de ticket</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>gere seu ticket e compartilhe com o mundo</h1>
+
+
+      <label for="username">Digite seu usuário do GitHub</label>
+
+      <div class="input">
+        <img src="./assets/logo-github.svg" alt="">
+        <input type="text" id="username" placeholder="Nome de usuário" autocomplete="off" autocapitalize="off">
+      </div>
+
+        <span id="error">Usuário inválido. Verifique e tente novamente.</span>
+
+        <button class="get-ticket">gerar meu ticket</button>
+    </div>
+
+    <div class="ticket">
+      <div class="ticket-container">
+        <img src="./assets/img-cover-ticket.png" alt="">
+
+        <div class="info">
+          <div class="user-ticket-info">
+            <img src="./assets/img-avatar.png" alt="" id="photo">
+
+            <span>tripulante</span>
+
+            <h1 id="name">Seu nome aqui</h1>
+          </div>
+
+          <div class="event-ticket-info">
+            <span>evento</span>
+            <span>ia pra devs</span>
+          </div>
+
+          <div class="event-ticket-info">
+            <span>data</span>
+            <span>14 — 16 ago. 2023</span>
+          </div>
+
+          <div class="event-ticket-info">
+            <span>hora</span>
+            <span>ao vivo — 19h</span>
+          </div>
+
+          <img src="./assets/lines-svg.png" alt="">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

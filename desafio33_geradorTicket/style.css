@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-gray-light: #F3F4FE;
+  --color-gray-dark: #202024;
+  --color-primary: #FFFFFF;
+  --color-success: #04D361;
+  --color-danger: #FF8F8F;
+  --color-purple: #8860E6;
+  --color-purple-dark: #5B409B;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Space Grotesk', sans-serif;
+  background-image: url('./assets/img-hero.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+button,
+input {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+
+  gap: 32px;
+}
+
+.content {
+  width: 490px;
+  height: 366px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content h1 {
+  text-transform: uppercase;
+
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 130%;
+  margin-bottom: 16px;
+
+  background: var(--linear, linear-gradient(90deg, #DEE0FC 0%, #996DFF 51.04%, #BC9FFF 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  max-width: 350px;
+}
+
+label {
+  color: var(--color-gray-light);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-gray-light);
+  padding: 16px 12px;
+  margin-right: 106px;  
+}
+
+input {
+  border: none;
+  outline: none;
+  width: 100%;
+  color: var(--color-gray-dark);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+  background: var(--color-gray-light);
+  
+}
+
+input::placeholder {
+  color: var(--color-gray-dark);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+#error {
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-danger);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 160%;
+
+  display: none;
+}
+
+.get-ticket {
+  text-transform: uppercase;
+  background: var(--color-purple);
+  color: var(--color-gray-light);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: #5B409B;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: cente;
+  gap: 10px;
+  padding: 22px 40px;
+  align-self: stretch;
+
+  margin-right: 106px;
+
+  transition: background 0.3s ease-in-out;
+}
+
+.get-ticket:hover {
+  background: var(--color-purple-dark);
+}
+
+.ticket {
+  display: flex;
+  background-image: url('./assets/bg-card-ticket.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 698px;
+  height: 409px;
+}
+
+.ticket-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.info {
+  background: var(--color-gray-light);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  color: var(--color-gray-dark);
+}
+
+.user-ticket-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.user-ticket-info img {
+  width: 128px;
+  height: 128px;
+  border-radius: 64px;
+}
+
+.user-ticket-info h1 {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+.user-ticket-info span {
+  text-transform: uppercase;
+  color: var(--color-purple);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 125%;
+}
+
+
+.event-ticket-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-ticket-info span{
+  text-transform: uppercase;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 1.05px;
+}
+
+.event-ticket-info span:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1.05px;
+
+  margin-bottom: 2px;
+}
